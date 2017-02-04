@@ -1,7 +1,7 @@
-boot_rest_auth0_rt
+template_secure_api_db
 ================================
 
-Telosys Tools bundle (2.1.0 or newer) for Spring Data Rest generation with Auth0 support
+Telosys Tools bundle (2.1.0 or newer) for Spring Data Rest generation with a database stored security
 
 Expose your Heroku Connect Postgres entities with a RESTful API
 
