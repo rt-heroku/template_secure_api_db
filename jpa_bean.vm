@@ -33,6 +33,8 @@ import java.io.Serializable;
 //import javax.validation.constraints.* ;
 //import org.hibernate.validator.constraints.* ;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 #foreach( $import in $java.imports($entity) )
 import $import;
 #end
@@ -87,6 +89,12 @@ $jpa.fieldAnnotations(4, $field)
 ##     // "$field.name" (column "$field.databaseName") is not mapped as an attribute because it is used in a link   
 ##     
 ## #end
+
+## Heroku connect fields that doesn't need to be updated
+#if (($field.name == "hcErr") || ($field.name =="hcLastop") || ($field.name =="isdeleted") || ($field.name =="systemmodstamp"))
+    @Transient
+    @JsonIgnore
+#end
 $jpa.fieldAnnotations(4, $field)
     private $field.formattedType(10) $field.formattedName(12) #if($field.hasInitialValue())= ${field.initialValue} #end;
 

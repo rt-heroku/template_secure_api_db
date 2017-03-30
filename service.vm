@@ -44,7 +44,7 @@ public class ${entity.name}Service
 		
 		return ${entity.name.toLowerCase()}Repository.findAll();
 	}
-
+/*
 	public ${entity.name} findBySfid(String ${entity.name.toLowerCase()}){
 		if (logger.isDebugEnabled())
 			logger.debug("Retrieving ${entity.name} with sfid:" + ${entity.name.toLowerCase()});
@@ -52,7 +52,7 @@ public class ${entity.name}Service
 		return ${entity.name.toLowerCase()}Repository.findBySfid(${entity.name.toLowerCase()});
 		
 	}
-
+*/
 	public ${entity.name} get(int id) {
 		if (logger.isDebugEnabled())
 			logger.debug("Retrieving ${entity.name} with id:" + id);

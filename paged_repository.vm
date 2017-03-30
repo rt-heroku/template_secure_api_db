@@ -41,12 +41,13 @@ $generator.generate($target.entityName ,  "${entity.name}KeyConverter.java", "${
 /**
  * Spring JPA Repository for ${entity.name}
  * 
- * @author Telosys Tools Generator
+ * @author Rodrigo Torres (Heroku)
  *
  */
 public interface ${entity.name}Repository extends PagingAndSortingRepository<${entity.name}, $keyObjectType> {
+/*
 		${entity.name} findBySfid(String sfid);
-
+*/
 #foreach( $link in $entity.selectedLinks )
 #if ($link.isCardinalityManyToOne())
 	@RestResource(rel="by${link.targetEntitySimpleType}", path="by${link.targetEntitySimpleType}")
