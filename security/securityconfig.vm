@@ -35,7 +35,7 @@ public class ServiceSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.httpBasic().and().authorizeRequests()
+		http.cors().and().httpBasic().and().authorizeRequests()
 			.antMatchers("/user/**").hasAuthority("ROLE_ADMIN")
 			.antMatchers(HttpMethod.POST,"/user/add").hasAnyAuthority("ROLE_ADMIN")
 			.antMatchers(HttpMethod.DELETE,"/user/**").hasAnyAuthority("ROLE_ADMIN")
